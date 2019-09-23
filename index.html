@@ -1,19 +1,36 @@
-<!doctype html>
-
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
 
-  <title>Coding class</title>
-  <meta name="karoliina-parnanen" content="coding-class">
+    <script type="text/javascript" src="imdb-output.js"></script>
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <script type="text/javascript" >
+        function loadIMDB() {
+            const div = document.getElementById('data');
+
+            for(let i = 0; i < imdb_list.length; i++) {
+
+                if(!(imdb_list[i] === "undefined")) {
+
+                    img = "<img class='tile' src='" + imdb_list[i] + "'>";
+                    div.innerHTML = div.innerHTML + img;
+
+                }
+
+            }
+
+        }
+    </script>
+    <style>
+        img {
+            height: 100px;
+            width: 65px;
+            margin: 5px;
+        }
+    </style>
 
 </head>
-
-<body>
-<p> hello world <p>
-
-  <script src="js/scripts.js"></script>
+<body onload="loadIMDB()">
+<div id="data"></div>
 </body>
 </html>
